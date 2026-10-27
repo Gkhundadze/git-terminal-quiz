@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Git-ის ტერმინალის ბრძანებების თეორიული ტესტი">
+  <title>Git ტერმინალის ტესტი</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Git ტესტის მთავარი გვერდი">
+        <span class="brand-mark">G</span>
+        <span>Git<span class="brand-muted">Quiz</span></span>
+      </a>
+      <span class="topbar-label">თეორიული ტესტირება</span>
+    </header>
+
+    <section class="intro" id="intro">
+      <p class="eyebrow">GIT FUNDAMENTALS</p>
+      <h1>რამდენად კარგად იცნობ <span>Git-ს?</span></h1>
+      <p class="intro-copy">უპასუხე 15 შეკითხვას Git-ის ტერმინალის ბრძანებებისა და სამუშაო პროცესის შესახებ. ტესტის ბოლოს მიიღებ შედეგს, რომლის სქრინშოტსაც ლექტორს გაუგზავნი.</p>
+      <div class="info-grid">
+        <div class="info-card"><span class="info-number">15</span><span class="info-label">შეკითხვა</span></div>
+        <div class="info-card"><span class="info-number">15</span><span class="info-label">მაქსიმალური ქულა</span></div>
+        <div class="info-card"><span class="info-number">1</span><span class="info-label">სწორი პასუხი თითო კითხვაზე</span></div>
+      </div>
+      <div class="name-field">
+        <label for="studentName">სახელი და გვარი</label>
+        <input id="studentName" type="text" maxlength="80" placeholder="შეიყვანე სახელი და გვარი" autocomplete="name">
+        <p class="field-hint">სახელი შედეგის სქრინშოტზე გამოჩნდება.</p>
+      </div>
+      <button class="button button-primary button-wide" id="startBtn" type="button">ტესტის დაწყება <span aria-hidden="true">→</span></button>
+      <p class="privacy-note">პასუხები ინახება მხოლოდ ამ გვერდის გახსნის განმავლობაში. გვერდის განახლებისას მიმდინარე ტესტი თავიდან დაიწყება.</p>
+    </section>
+
+    <section class="quiz hidden" id="quiz" aria-labelledby="questionText">
+      <div class="quiz-heading">
+        <div>
+          <p class="eyebrow">GIT FUNDAMENTALS</p>
+          <h2>ტესტირება</h2>
+        </div>
+        <div class="progress-count"><strong id="currentNumber">1</strong><span> / 15</span></div>
+      </div>
+      <div class="progress-track" aria-label="ტესტის პროგრესი"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="question-card">
+        <div class="question-meta"><span id="questionCategory">ბრძანებები</span><span id="answeredCount">პასუხგაცემულია: 0/15</span></div>
+        <h3 id="questionText"></h3>
+        <div class="answers" id="answers" role="group" aria-labelledby="questionText"></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="button button-secondary" id="backBtn" type="button">← წინა</button>
+        <button class="button button-primary" id="nextBtn" type="button">შემდეგი →</button>
+      </div>
+      <p class="quiz-hint">შეგიძლია კითხვებს შორის გადაადგილდე და პასუხები შეცვალო დასრულებამდე.</p>
+    </section>
+
+    <section class="results hidden" id="results" aria-labelledby="resultTitle">
+      <div class="result-header">
+        <p class="eyebrow">ტესტი დასრულებულია</p>
+        <h2 id="resultTitle">შენი შედეგი</h2>
+        <p class="student-result-name" id="resultName"></p>
+      </div>
+      <div class="score-panel">
+        <div class="score-ring" id="scoreRing">
+          <div class="score-inner"><strong id="scoreValue">0/15</strong><span>ქულა</span></div>
+        </div>
+        <div class="score-summary">
+          <p class="score-percent" id="scorePercent">0%</p>
+          <p id="scoreMessage">შედეგის აღწერა</p>
+          <p class="score-detail" id="scoreDetail"></p>
+        </div>
+      </div>
+      <div class="result-instructions">
+        <span class="instruction-icon" aria-hidden="true">✓</span>
+        <div><strong>შედეგის ჩაბარება</strong><p>გადაიღე ამ ეკრანის სქრინშოტი ისე, რომ ჩანდეს სახელი, ქულა და პროცენტული შედეგი, შემდეგ გაუგზავნე ლექტორს.</p></div>
+      </div>
+      <div class="result-actions">
+        <button class="button button-primary" id="reviewBtn" type="button">პასუხების ნახვა</button>
+        <button class="button button-secondary" id="restartBtn" type="button">ტესტის თავიდან გავლა</button>
+      </div>
+      <div class="review hidden" id="review">
+        <div class="review-heading"><h3>პასუხების მიმოხილვა</h3><p>შეადარე შენი პასუხები სწორ პასუხებს.</p></div>
+        <div id="reviewList"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Git Quiz</span>
+      <span>სასწავლო მიზნებისთვის</span>
+    </footer>
+  </main>
+</body>
+</html>
